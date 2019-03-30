@@ -63,6 +63,13 @@ df.p <- data.frame(idx=tedata$idx,
 
 write_csv(df.p, "/Users/tktran/Documents/hack_2_2.csv")
 
+imp = ranger(UNITS~., data = trdata, importance = "impurity")
+
+imp$variable.importance
+sort(imp$variable.importance)
+
+imp2 = imp$variable.importance
+importance(imp)
 
 
 
